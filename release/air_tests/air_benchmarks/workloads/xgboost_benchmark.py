@@ -82,6 +82,7 @@ def run_xgboost_training(data_path: str, num_workers: int):
     trainer = XGBoostTrainer(
         scaling_config=ScalingConfig(
             num_workers=num_workers,
+            use_gpu=True,
             resources_per_worker={"CPU": 12},
         ),
         label_column="labels",
